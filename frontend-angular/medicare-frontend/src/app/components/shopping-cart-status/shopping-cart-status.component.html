@@ -1,0 +1,8 @@
+<div class="cart-area d-n">
+    <a routerLink="/cart">
+        <div class="total">
+            {{totalPrice | currency: 'INR'}} <span>{{totalQuantity}}</span>
+        </div>
+        <i class="fa fa-shopping-cart" style="padding-top: 20px;padding-left: 20px;" aria-hidden="true"></i>
+    </a>
+</div>

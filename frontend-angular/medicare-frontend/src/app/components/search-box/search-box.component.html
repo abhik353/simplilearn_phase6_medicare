@@ -1,0 +1,4 @@
+<div class="d-flex">
+    <input #searchProduct class="div-control me-2" type="text" placeholder="Search" aria-label="Search" (keyup.enter)="onSearch(searchProduct.value)">
+    <button class="btn btn-outline-success" type="button" (click)="onSearch(searchProduct.value)">Search</button>
+</div>

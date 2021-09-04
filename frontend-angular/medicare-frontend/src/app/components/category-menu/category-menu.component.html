@@ -1,0 +1,5 @@
+<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+    <li *ngFor="let category of productCategories" class="nav-item">
+      <a class="nav-link active" aria-current="page" routerLinkActive="active-link" routerLink="/category/{{category.id}}">{{category.categoryName}}</a>
+    </li>
+  </ul>

@@ -1,0 +1,54 @@
+<h1 class="mt-3 mb-3">Products</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let product of products" class="col-md-3">
+            <div *ngIf="product.active" class="card" style="width: 18rem;margin-bottom: 20px;">
+                <a routerLink="/products/{{product.id}}">
+                    <img src="{{product.imageUrl}}" class="card-img-top">
+                </a>
+                <div class="card-body">
+                    <a routerLink="/products/{{product.id}}">
+                        <h5 class="card-title">{{product.name}}</h5>
+                    </a>
+                    <p class="card-text">{{product.description}}</p>
+                    <p>{{product.unitPrice | currency:'INR'}}</p>
+                    <button class="btn btn-primary btn-sm" (click)="onAddToCart(product)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="products?.length == 0">
+            No Products found matching the search. Please check and try again
+        </div>
+        <div class="footer-pagination">
+            <div class="row">
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-9" style="padding-left: 30%;">
+                            <ngb-pagination [(page)]="pageNumber" 
+                            [pageSize]="pageSize" 
+                            [collectionSize]="total" 
+                            (pageChange)="getAllProducts()" 
+                            [maxSize]="10"
+                            [boundaryLinks]="true">
+
+                            </ngb-pagination>
+                        </div>
+                        <div class="col-md-3 mt-2" style="text-align: right;">
+                            <span class="mr-2">Page size  </span>
+                            <select (change)="changePageSize($event)">
+                                <option selected="true">10</option>
+                                <option>20</option>
+                                <option>30</option>
+                            </select>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

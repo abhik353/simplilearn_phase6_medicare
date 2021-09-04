@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+.active-link{
+    font-weight: bold;
+}
+
+.section-content{
+    position:relative;
+    margin:0 auto;
+    z-index:1
+}
+
+.section-content-p30{
+    padding:0 30px
+}
+
+.main-content.page-m{
+    padding:10% 15%!important
+}
+
+.main-content{
+    padding-top:116px;
+    min-height:100vh
+}
+
+.form-area{
+    background:#e5e5e5;
+    position:relative;
+    margin-bottom:45px;
+    padding:50px 20px;
+    border:3px solid #ccc
+}
+

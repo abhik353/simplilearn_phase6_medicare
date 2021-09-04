@@ -1,0 +1,18 @@
+<div style="padding: 20px;">
+    <div *ngIf="isAuthenticated && userFullName">
+        Welcome back {{ userFullName }}
+    </div>
+
+    <button *ngIf="!isAuthenticated" routerLink="/login" class="btn btn-sm btn-primary" name="loginBtn">
+        Login
+    </button>
+    <button *ngIf="isAuthenticated" (click)="logout()" class="btn btn-sm btn-primary" name="logoutBtn">
+        Logout
+    </button>
+    <button *ngIf="isAuthenticated" routerLink="/order-history" class="btn btn-sm btn-primary" style="margin-left: 20px;" name="orderHistoryBtn">
+        Orders
+    </button>
+    <button *ngIf="isAuthenticated && emailId== 'admin123@gmail.com'" class="btn btn-primary btn-sm" routerLink="/dashboard" style="margin-left: 20px;" name="adminPortalBtn" id="adminPortalBtn">
+        Admin Portal
+    </button>
+</div>

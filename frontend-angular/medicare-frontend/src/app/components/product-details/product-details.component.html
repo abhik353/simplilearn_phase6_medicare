@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+            <div class="card" style="width: 18rem;">
+                    <img src="{{product?.imageUrl}}" class="card-img-top">
+                <div class="card-body">
+                        <h5 class="card-title">{{product?.name}}</h5>
+                    <p class="card-text">{{product?.description}}</p>
+                    <p>{{product?.unitPrice | currency:'INR'}}</p>
+                    <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to Cart</button>
+                </div>
+                <a routerLink="/products">Go Back to Products</a>
+            </div>
+    </div>
+</div>
