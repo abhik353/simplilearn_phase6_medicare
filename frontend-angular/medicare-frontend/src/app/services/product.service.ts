@@ -11,20 +11,8 @@ import { ProductCategory } from '../models/product-category';
 export class ProductService {
 
   private baseUrl = 'http://localhost:8080/api/products';
-  //private categoryUrl = 'http://localhost:8080/api/product-category';
 
   constructor(private httpClient: HttpClient) { }
-
-  // getProductList() : Observable<Product[]>{
-  //   return this.httpClient.get<Product[]>(`${this.baseUrl}`)
-  // }
-  // getProductList(id: number): Observable<Product[]> {
-
-  //   let searchUrl = `${this.baseUrl}/search/`
-  //   return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
-  //     map(response => response._embedded.products)
-  //   )
-  // }
 
   getProductListPaginate(page:number, size:number,id: number): Observable<GetResponseProducts> {
 
@@ -32,11 +20,6 @@ export class ProductService {
     return this.httpClient.get<GetResponseProducts>(searchUrl);
   }
 
-  // getProductCategories(): Observable<ProductCategory[]> {
-  //   return this.httpClient.get<GetResponseProductCategory>(this.categoryUrl).pipe(
-  //     map(response => response._embedded.productCategory)
-  //   )
-  // }
 
   getProduct(id:number):Observable<Product> {
 
@@ -44,13 +27,6 @@ export class ProductService {
     return this.httpClient.get<Product>(searchUrl);
   }
 
-  // searchProducts(name: string): Observable<Product[]> {
-
-  //   let searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${name}`
-  //   return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
-  //     map(response => response._embedded.products)
-  //   )
-  // }
 
   searchProductListPaginate(page:number, size:number,product: string): Observable<GetResponseProducts> {
     
